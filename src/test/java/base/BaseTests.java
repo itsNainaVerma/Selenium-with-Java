@@ -5,12 +5,14 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.HomePage;
 
 import java.util.List;
 
 public class BaseTests
 {
     private WebDriver driver;
+    protected HomePage homePage;
 
     public void setUp(){
         System.setProperty("webdriver.chrome.driver","resources/chromedriver.exe");
@@ -20,13 +22,8 @@ public class BaseTests
 //      driver.manage().window().setSize(new Dimension(375,812));
         driver.manage().window().maximize();
 
-        List<WebElement> links = driver.findElements(By.tagName("a"));
-        System.out.println(links.size());
+        homePage = new HomePage(driver);
 
-        WebElement inputsLink = driver.findElement(By.linkText("Inputs"));
-        inputsLink.click();
-
-        System.out.println(driver.getTitle());
         driver.quit();
     }
 
