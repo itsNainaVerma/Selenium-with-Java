@@ -19,7 +19,7 @@ public class HomePage {
         return new LoginPage(driver);
     }
 
-    public DropdownPage clickDropdownLink(){
+    public DropdownPage clickDropdown(){
         driver.findElement(dropdownLink).click();
         return new DropdownPage(driver);
     }
