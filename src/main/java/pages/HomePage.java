@@ -9,6 +9,7 @@ public class HomePage {
     private By formAuthenticationLink = By.linkText("Form Authentication");
     private By dropdownLink = By.linkText("Dropdown");
     private By hoversLink = By.linkText("Hovers");
+    private By keyPressesLink = By.linkText("Key Presses");
 
     public HomePage(WebDriver driver)
     {
@@ -28,6 +29,11 @@ public class HomePage {
     public HoversPage clickHovers(){
         driver.findElement(hoversLink).click();
         return new HoversPage(driver);
+    }
+
+    public KeyPressesPage clickKeyPresses(){
+        driver.findElement(keyPressesLink).click();
+        return new KeyPressesPage(driver);
     }
 
 }
