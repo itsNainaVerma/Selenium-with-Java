@@ -14,12 +14,15 @@ public class BaseTests {
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
         driver = new ChromeDriver();
-        driver.get("https://the-internet.herokuapp.com/");
-
-//      driver.manage().window().setSize(new Dimension(375,812));
-        driver.manage().window().maximize();
+        goHome();
+        driver.manage().window().setSize(new Dimension(375,812));
 
         homePage = new HomePage(driver);
+    }
+
+    @BeforeMethod
+    public void goHome(){
+        driver.get("https://the-internet.herokuapp.com/");
     }
 
     @AfterTest
