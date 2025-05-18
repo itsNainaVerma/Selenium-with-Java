@@ -21,5 +21,7 @@ public class KeysTests extends BaseTests {
     public void testSpecialCharacters(){
         KeyPressesPage keyPage = homePage.clickKeyPresses();
         keyPage.enterText(Keys.chord(Keys.SHIFT,"8","5","4"));
+        assertEquals(keyPage.getResult(),"You entered: 4", "Key press result is wrong");
+
     }
 }
