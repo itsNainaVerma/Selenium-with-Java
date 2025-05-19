@@ -50,7 +50,6 @@ public class BaseTests {
             }
             System.out.println("Screenshot taken: " + screenshot.getAbsolutePath());
         }
-
     }
 
 //    public void takeScreenshotForAllTests(){
@@ -64,4 +63,7 @@ public class BaseTests {
 //        System.out.println("Screenshot taken: " + screenshot.getAbsolutePath());
 //    }
 
+    public WindowManager getWindowManager(){
+        return new WindowManager(driver);
+    }
 }
